@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./6.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <div class="product">
+
+            <div class="product-image">
+                <img :src="image" :alt="altText" width="50px" />
+            </div>
+
+            <div class="product-info">
+                <h1>{{ product }}</h1>
+                <p v-if="inStock">In Stock</p>
+                <p v-else :class="{ outOfStock: !inStock }">Out of Stock</p>
+
+            <ul>
+                <li v-for="detail in details">{{ detail }}</li>
+            </ul>
+
+            <ul>
+                <li v-for="size in sizes">{{ size }}</li>
+            </ul>
+
+            <div class="color-box" v-for="variant in variants" :key="variant.variantId"
+                :style="{ backgroundColor:variant.variantColor }" @mouseover="updateProduct(variant.variantImage)">
+            </div>
+
+            <div class="cart">
+                <p>Cart({{ cart }})</p>
+            </div>
+
+            <button v-on:click="cart += 1">Add to cart</button>
+            <button v-on:click="cart -= 1">Remove to cart</button>
+
+            <a :href="link">{{ linkText }}</a>
+
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script src="5.js"></script>
+
+</body>
+
+</html>
