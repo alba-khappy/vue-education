@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>training</title>
+    <link rel="stylesheet" href="styleSelect.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <div class="select">
+        <div class="select__main-item" v-on:click="toggleList">
+            {{value}}
+        </div>
+        <div v-bind:class="{ 'list-is-opened': isOpened }">
+            <ul class="select__items">
+                <li class="select__item"
+                        v-for="item in list"
+                    v-on:click="selectItem(item)"
+                >{{item.text}}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="app2">
+    <div class="calendar">
+        <p class="months">{{months[0].text}}</p>
+        <div class="day-of-week" v-for="wDay in wDays">
+            {{wDay}}
+        </div>
+        <div>
+            {{day}}
+        </div>
+
+    </div>
+</div>
+
+
+<script src="select.js"></script>
+</body>
+</html>

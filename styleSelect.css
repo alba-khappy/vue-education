@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.select {
+    display: grid;
+    justify-content: center;
+}
+
+.select__items {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 0.6px solid #C4C4C4;
+    border-radius: 10px;
+    background-color: #F7F9FE;
+    color: #58595B;
+}
+
+.select__main-item {
+    width: 180px;
+    border: 0.6px solid #C4C4C4;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: #F7F9FE;
+    text-align: center;
+    color: #58595B;
+}
+
+.select__item {
+    padding: 10px;
+}
+
+.list-is-opened {
+    display: none;
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    width: 330px;
+    background: #FFFFFF;
+    border: 1px solid #DADADA;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.months {
+    grid-column: 1/3;
+}
+
+.day-of-week {
+    grid-row: 2/3;
+}
